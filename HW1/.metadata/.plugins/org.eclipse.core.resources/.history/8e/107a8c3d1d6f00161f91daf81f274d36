@@ -1,0 +1,18 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import Things.Creature;
+import Things.Tiger;
+
+public class CreatureTests {
+
+	@Test
+	public void eatingStores() {
+		Tiger tiger=new Tiger();
+		tiger.setName("test");
+	}
+
+}

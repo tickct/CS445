@@ -1,0 +1,16 @@
+package Things;
+
+public class Tiger extends Creature{
+
+	public Tiger(String name){
+		super();
+		this.setName(name);
+	}
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

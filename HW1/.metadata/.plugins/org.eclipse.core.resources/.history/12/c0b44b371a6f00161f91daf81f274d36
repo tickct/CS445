@@ -1,0 +1,19 @@
+package Things;
+
+public class Thing {
+	
+	private String name;
+	
+	public Thing() {
+		// TODO Auto-generated constructor stub
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String toString(){
+		return getName()+this.getClass().getSimpleName();
+	}
+}

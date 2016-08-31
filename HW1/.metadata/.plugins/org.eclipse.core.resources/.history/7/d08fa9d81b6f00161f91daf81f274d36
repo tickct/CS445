@@ -1,0 +1,10 @@
+package Things;
+
+public abstract class Creature extends Thing{
+	public Creature(){
+		super();
+	}
+	public void eat(Thing aThing){
+		
+	}
+}
