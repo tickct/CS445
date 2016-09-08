@@ -5,9 +5,9 @@ public class Thing {
 	private String name;
 	
 	public Thing() {
-		// TODO Auto-generated constructor stub
+		
 	}
-	public String getName() {
+	public String getName(){
 		return name;
 	}
 	public void setName(String name) {
@@ -21,5 +21,10 @@ public class Thing {
 		else{
 		return this.getName()+" "+this.getClass().getSimpleName();
 		}
+	}
+	public class NameNotInitialized extends Exception{
+		 public NameNotInitialized( String s ) {
+		      super(s);
+		    }
 	}
 }

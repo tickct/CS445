@@ -1,0 +1,10 @@
+package Things;
+
+public class Fly implements Flyer {
+
+	public void Flys() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

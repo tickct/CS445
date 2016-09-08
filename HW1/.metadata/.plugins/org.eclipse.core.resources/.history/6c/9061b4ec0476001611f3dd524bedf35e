@@ -1,0 +1,37 @@
+package tests;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import org.junit.Test;
+
+import Things.Bat.IllegalFood;
+import Things.Fly;
+import Things.Tiger;
+
+public class CreatureTests {
+	Tiger tiger=new Tiger("Simba");
+	Fly fly=new Fly("Philip");
+	
+	@Test
+	public void BellyStartsEmpty() {
+		assertNull(tiger.getInBelly());
+	}
+	@Test
+	public void eatingStores() {
+		Tiger eaten=new Tiger("Eaten ");
+		tiger.eat(eaten);
+		assertNotNull(tiger.getInBelly());
+	}
+	@Test
+	public void toStringIncludesClass(){
+		assertEquals("Simba Tiger",tiger.toString());
+	}
+	@Test(expected=IllegalFood.class)
+	public void testIndexOutOfBoundsException() {
+	    ArrayList emptyList = new ArrayList();
+	    Object o = emptyList.get(0);
+	}
+
+}

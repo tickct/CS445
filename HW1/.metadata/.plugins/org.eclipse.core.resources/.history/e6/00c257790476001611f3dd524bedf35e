@@ -1,0 +1,34 @@
+package Things;
+
+public class Bat extends Creature implements Flyer {
+
+	public void Flys() {
+		// TODO Auto-generated method stub
+
+	}
+	
+	@Override
+	public void eat(Thing aThing){
+		try{
+			if(aThing instanceof Creature){
+				throw new IllegalFood(this.getName);
+			}
+			System.out.println(this.toString()+" has just eaten a "+aThing.toString());
+			setInBelly(aThing);
+		}
+		catch(IllegalFood e){
+			System.out.println(this.toString()+ " can not eat "+a.toString());
+		}
+	}
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+
+	}
+	public class IllegalFood extends Exception{
+		public IllegalFood(String e){
+			super(e);
+		}
+	}
+
+}

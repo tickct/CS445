@@ -1,0 +1,24 @@
+package tests;
+
+import Things.Thing;
+import Things.Tiger;
+
+
+public class TestCreature {
+
+public static final int THING_COUNT=10;
+public static final int CREATURE_COUNT=5;
+
+	public static void main(String[]args){
+		Thing[] thing_array=new Thing[THING_COUNT];
+		for(int i=0;i<THING_COUNT;i=i+2){
+			thing_array[i]=new Thing();
+			thing_array[i+1]=new Tiger("Simba" + i);
+			thing_array[i].setName("testName"+i);
+		}
+		for(int i=0;i<THING_COUNT;i++){
+			System.out.println(thing_array[i]);
+		}
+	}
+ 
+}

@@ -1,0 +1,30 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import Things.Thing;
+
+
+public class TestCreature {
+
+public static final int THING_COUNT=10;
+public static final int CREATURE_COUNT=10;
+
+	public static void main(String[]args){
+		Thing[] thing_array=new Thing[THING_COUNT];
+		for(int i=0;i<THING_COUNT;i++){
+			thing_array[i]=new Thing();
+			thing_array[i].setName("testName"+i);
+		}
+		for(int i=0;i<THING_COUNT;i++){
+			System.out.println(thing_array[i]);
+		}
+	}
+    @Test
+	public void test() {
+	
+	}
+
+}

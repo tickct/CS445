@@ -1,0 +1,43 @@
+package tests;
+
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
+import org.junit.Test;
+
+import Things.Fly;
+import Things.Fly.IllegalFood;
+import Things.Thing;
+import Things.Tiger;
+
+public class CreatureTests {
+	Tiger tiger=new Tiger("Simba");
+	Fly fly=new Fly("Philip");
+	Thing thing=new Thing();
+	
+	@Test
+	public void BellyStartsEmpty() {
+		assertNull(tiger.getInBelly());
+	}
+	@Test
+	public void eatingStores() {
+		tiger.eat(fly);
+		assertEquals(fly,tiger.getInBelly());
+	}
+	@Test
+	public void toStringIncludesClass(){
+		assertEquals("Simba Tiger",tiger.toString());
+	}
+	@Test
+	public void FlyCantEatCreatures() {
+	    try{
+	    	fly.eat(tiger);
+	    	fail("IllegalFood not thrown");
+	    }
+	    catch(IllegalFood e){
+	    	assertTrue(true);
+	    }
+	   }
+
+}

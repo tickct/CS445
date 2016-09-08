@@ -1,0 +1,19 @@
+package Things;
+
+public class Bat extends Creature implements Flyer {
+
+	public void Flys() {
+		// TODO Auto-generated method stub
+
+	}
+	
+	@Override
+	
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+
+	}
+	
+
+}

@@ -20,5 +20,6 @@ public class ThingTests {
 		thing.setName("test");
 		assertEquals("toString returns name",thing.getName(),thing.toString());
 	}
+	
 
 }

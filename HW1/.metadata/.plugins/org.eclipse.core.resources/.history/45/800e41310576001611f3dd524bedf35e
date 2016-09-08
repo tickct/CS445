@@ -1,0 +1,20 @@
+package Things;
+
+public class Fly extends Creature implements Flyer {
+	
+	public Fly(String name){
+		super();
+		this.setName(name);
+	}
+	public void Flys() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,5 +1,6 @@
 package Things;
 
+
 public abstract class Creature extends Thing{
 	
 	private Thing inBelly;
@@ -28,5 +29,11 @@ public abstract class Creature extends Thing{
 	}
 	public Thing getInBelly(){
 		return inBelly;
+	}
+	
+	public class IllegalFood extends Exception{
+		public IllegalFood(String e){
+			super(e);
+		}
 	}
 }

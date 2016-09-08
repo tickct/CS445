@@ -1,0 +1,25 @@
+package Things;
+
+public class Bat extends Creature implements Flyer {
+
+	public void Flys() {
+		// TODO Auto-generated method stub
+
+	}
+	
+	@Override
+	public void eat(Thing a) throws IllegalFood{
+		
+	}
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+
+	}
+	public class IlligalFood extends Exception{
+		public IlligalFood(String e){
+			super(e);
+		}
+	}
+
+}
