@@ -6,7 +6,9 @@ Project details can be found at:
 http://www.cs.iit.edu/~virgil/cs445/mail.fall2016/HW-1/hw1.html
 _________________________
 PREREQUISITES:
+
 openJDK-8-jdk
+
 Apache ANT
 
 To aquire these prerequisites run the following commands
