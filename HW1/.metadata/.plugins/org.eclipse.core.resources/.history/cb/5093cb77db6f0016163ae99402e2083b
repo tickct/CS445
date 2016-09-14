@@ -1,0 +1,25 @@
+package tests;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import org.junit.Test;
+
+import Things.Tiger;
+
+public class CreatureTests {
+
+	@Test
+	public void BellyStartsEmpty() {
+		Tiger tiger=new Tiger("test");
+		assertNull(tiger.getInBelly());
+	}
+	@Test
+	public void eatingStores() {
+		Tiger tiger=new Tiger("test");
+		Tiger eaten=new Tiger("Eaten ");
+		tiger.eat(eaten);
+		assertNotNull(tiger.getInBelly());
+	}
+
+}

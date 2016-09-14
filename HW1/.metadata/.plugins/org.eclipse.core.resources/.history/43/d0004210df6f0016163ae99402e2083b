@@ -1,0 +1,35 @@
+package tests;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import org.junit.Test;
+
+import Things.Creature.BellyEmpty;
+import Things.Tiger;
+
+public class CreatureTests {
+
+	@Test
+	public void BellyStartsEmpty() {
+		Tiger tiger=new Tiger("test");
+		assertNull(tiger.getInBelly());
+	}
+	@Test
+	public void EatingStoresLast() {
+		Tiger tiger=new Tiger("test");
+		Tiger eaten=new Tiger("Eaten ");
+		tiger.eat(eaten);
+		assertEquals(eaten,tiger.getInBelly());
+		Tiger eaten2=new Tiger("Eaten2");
+		tiger.eat(eaten2);
+		assertEquals(eaten2,tiger.getInBelly());
+	}
+	@Test(expected=BellyEmpty.class)
+	public void EmptyBellyPrintsDifferent(){
+		Tiger tiger=new Tiger("test");
+		tiger.getInBelly();
+	}
+
+}

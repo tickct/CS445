@@ -1,0 +1,17 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import Things.Fly;
+
+public class FlyTests {
+	Fly fly=new Fly("Philip");
+	
+	@Test
+	public void toStringIncludesClass(){
+		assertEquals("Philip Fly",fly.toString());
+	}
+
+}

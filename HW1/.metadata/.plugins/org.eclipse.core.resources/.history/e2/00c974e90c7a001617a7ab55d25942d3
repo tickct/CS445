@@ -1,0 +1,38 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import Things.Thing;
+import Things.Tiger;
+import Things.Creature.IllegalFood;
+
+public class AntTests {
+	Ant ant=new Ant("Anthony")
+	Thing thing=new Thing();
+	Tiger tiger=new Tiger("Tony");
+	
+	@Before
+	public void setUp(){
+	thing.setName("pencil");
+	}
+	
+	@Test
+	public void eatingStores() {
+		ant.eat(thing);
+		assertEquals(thing,ant.getInBelly());
+	}
+	@Test(expected=IllegalFood.class)
+	public void FlyCantEatCreatures() {
+	    ant.eat(tiger);
+	}
+	
+	@Test
+	public void toStringIncludesClass(){
+		assertEquals("Philip Fly",ant.toString());
+	}
+	
+
+}
