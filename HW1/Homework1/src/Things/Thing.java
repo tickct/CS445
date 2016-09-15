@@ -22,9 +22,4 @@ public class Thing {
 		return this.getName()+" "+this.getClass().getSimpleName();
 		}
 	}
-	public class NameNotInitialized extends Exception{
-		 public NameNotInitialized( String s ) {
-		      super(s);
-		    }
-	}
 }

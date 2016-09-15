@@ -3,31 +3,44 @@ package tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 
-import Things.Bat;
-import Things.Creature.IllegalFood;
+import org.junit.Before;
+import org.junit.Test;
+
 import Things.Fly;
-import Things.Thing;
 import Things.Tiger;
 
-@RunWith(JUnit4.class)
+
 public class CreatureTests {
 	Tiger tiger=new Tiger("Tony");
 	Fly fly=new Fly("Philip");
-	Thing thing=new Thing();
-	Bat bat=new Bat("Betty");
 	
-	@Rule
-	public ExpectedException thrown = ExpectedException.none();
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	
+	@Before
+	public void setUp(){
+		System.setOut(new PrintStream(outContent));
+	}
 	
 	@Test
 	public void BellyStartsEmpty() {
 		assertNull(tiger.getInBelly());
+	}
+	@Test
+	public void WhatDidYouEatDiffWhenEmpty(){
+		tiger.whatDidYouEat();
+		assertEquals(tiger.toString()+" has had nothing to eat!\n",outContent.toString());
+	}
+	@Test
+	public void WhatDidYouEatReturnsStored(){
+		tiger.eat(fly);
+		//needed to not capture the eat confirmation
+		outContent.reset();
+		tiger.whatDidYouEat();
+		assertEquals(tiger.toString()+" has eaten a "+fly.toString()+"\n",outContent.toString());
 	}
 	@Test
 	public void eatingStores() {
@@ -38,5 +51,5 @@ public class CreatureTests {
 	public void toStringIncludesClass(){
 		assertEquals("Tony Tiger",tiger.toString());
 	}
-
+	
 }
