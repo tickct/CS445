@@ -9,8 +9,8 @@ import users.Farmer;
 
 public class RegisterTest {
 		UserRegistration list=new UserRegistration();
-		Farmer farmer=new Farmer("Sean Gray","1231231234","123ABC","123456");
-		Farmer farmer2=new Farmer("Sean Gray","1231231234","123ABC","123456");
+		Farmer farmer=new Farmer("Sean Gray","1231231234","123ABC","123456","user","pass");
+		Farmer farmer2=new Farmer("Sean Gray","1231231234","123ABC","123456","user2","pass");
 		
 	@Test
 	public void AddFarmerAddstoList(){
@@ -18,6 +18,11 @@ public class RegisterTest {
 		assertEquals(list.getSize(),1);
 		list.addUser(farmer2);
 		assertEquals(list.getSize(),2);
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void CantAddFarmerWithSameUsername(){
+		list.addUser(farmer);
+		list.addUser(farmer);
 	}
 	@Test
 	public void RevoveFarmerRemoves(){
