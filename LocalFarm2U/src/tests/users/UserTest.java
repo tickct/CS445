@@ -5,14 +5,14 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import users.Customers;
+import users.Customer;
 import users.Farmer;
 import users.User;
 
 
 public class UserTest {
-	User user=new Farmer("Sean Gray","1231231234","123ABC","123456");
-	User user2=new Customers("Sean Gray","1231231234","123ABC","123456");
+	User user=new Farmer("Sean Gray","1231231234","123ABC","123456","user","pass");
+	User user2=new Customer("Sean Gray","1231231234","123ABC","123456","user","pass");
 	User[] userlist={user,user2};
 	@Test
 	public void ZipCodeShouldBe6Long(){
@@ -22,9 +22,5 @@ public class UserTest {
 	@Test(expected=IllegalArgumentException.class)
 	public void ZipCodeShouldBeNullIfNot6(){
 		user.setZip("1234");
-	}
-	@Test
-	public void idShouldIncement(){
-		assertNotEquals(user.getID(),user2.getID());
 	}
 }

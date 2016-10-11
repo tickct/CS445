@@ -5,15 +5,15 @@ public abstract class User {
 	private String phoneNumber;
 	private String adress;
 	private String zipCode;
-	private static int nextIdNum=0;
-	private int idNum;
-	public User(String nm,String pN,String ad,String zipCode){
+	private String username;
+	private String password;
+	public User(String nm,String pN,String ad,String zipCode,String user, String pass){
 		name=nm;
 		phoneNumber=pN;
 		adress=ad;
 		this.setZip(zipCode);
-		idNum=nextIdNum;
-		nextIdNum++;
+		username=user;
+		password=pass;
 	}
 	public void setZip(String zip) throws IllegalArgumentException{
 		if(zip.length()!=6){
@@ -22,11 +22,9 @@ public abstract class User {
 		zipCode=zip;
 	}
 	public String getZip() {
-		// TODO Auto-generated method stub
 		return zipCode;
 	}
-	public int getID() {
-		// TODO Auto-generated method stub
-		return idNum;
+	public String getUsername() {
+		return username;
 	}
 }
