@@ -4,7 +4,6 @@ public class Product {
 	private String name;
 	private String type;
 	private double cost;
-	private static Types types=new Types();
 	public Product(String nm,String tp,double cst){
 		name=nm;
 		setType(tp);
@@ -21,8 +20,12 @@ public class Product {
 	}
 
 	public void setType(String tp) {
-		//TODO: create array of allowed types and check
-		type=tp;
+		if(Types.types.contains(tp)){
+			type=tp;
+		}
+		else{
+			throw new IllegalArgumentException("Non Legal Type");
+		}
 		
 	}
 

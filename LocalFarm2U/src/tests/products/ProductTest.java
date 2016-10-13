@@ -1,22 +1,33 @@
 package tests.products;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import products.Product;
+import products.Types;
 
 public class ProductTest {
-	Product product=new Product("Granny", "Apple", .10);
+	
+	@Before
+	public void setUp(){
+		Types.addType("Apple");
+	}
+	
 	@Test(expected=IllegalArgumentException.class)
 	public void setCostShouldFailIfNegative() {
-		product.setCost(-1);
+		Product product=new Product("Granny","Apple",-2);
 	}
 	@Test
 	public void setCostShouldSetIfPositive(){
-		product.setCost(2);
+		Product product=new Product("Granny","Apple",2);
 		//extra zero is for error range
 		assertEquals(2.0,product.getCost(),0);
+	}
+	@Test(expected=IllegalArgumentException.class)
+	public void setTypeCanOnlySetTypesInList(){
+	 Product product=new Product("Granny","Oragne",.2);
 	}
 
 }

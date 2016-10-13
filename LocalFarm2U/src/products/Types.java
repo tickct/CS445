@@ -3,19 +3,16 @@ package products;
 import java.util.ArrayList;
 
 public class Types {
-	private ArrayList<String> types;
-	public Types(){
-		types=new ArrayList<String>();
-	}
-	public void addType(String in){
+	public static ArrayList<String> types = new ArrayList<String>();;
+	public static void addType(String in){
 		if(!(types.contains(in))){
 			types.add(in);
 		}
 	}
-	public ArrayList<String> getTypes(){
+	public static ArrayList<String> getTypes(){
 		return types;
 	}
-	public int size(){
+	public static int size(){
 		return types.size();
 	}
 }
